@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
+    <PackageReference Include="MassTransit" Version="8.5.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.19" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.19" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.19">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="9.0.3" />
+    <PackageReference Include="Yarp.ReverseProxy" Version="2.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Finance.Presentation\Finance.Presentation.csproj" />
+    <ProjectReference Include="..\HR.Presentation\HR.Presentation.csproj" />
+    <ProjectReference Include="..\Modules\Finance\Finance.Application\Finance.Application.csproj" />
+    <ProjectReference Include="..\Modules\Finance\Finance.Domain\Finance.Domain.csproj" />
+    <ProjectReference Include="..\Modules\Finance\Finance.Infrastructure\Finance.Infrastructure.csproj" />
+    <ProjectReference Include="..\Modules\HR\HR.Domain\HR.Domain.csproj" />
+    <ProjectReference Include="..\Modules\Logging\Logging.Domain\Logging.Domain.csproj" />
+    <ProjectReference Include="..\Modules\Users\Users.Domain\Users.Domain.csproj" />
+    <ProjectReference Include="..\SharedKernel\ERPSys.SharedKernel\ERPSys.SharedKernel.csproj" />
+    <ProjectReference Include="..\Modules\HR\HR.Application\HR.Application.csproj" />
+    <ProjectReference Include="..\Modules\HR\HR.Infrastructure\HR.Infrastructure.csproj" />
+    <ProjectReference Include="..\Modules\Users\Users.Application\Users.Application.csproj" />
+    <ProjectReference Include="..\Modules\Users\Users.Infrastructure\Users.Infrastructure.csproj" />
+    <ProjectReference Include="..\Modules\Logging\Logging.Application\Logging.Application.csproj" />
+    <ProjectReference Include="..\Modules\Logging\Logging.Infrastructure\Logging.Infrastructure.csproj" />
+    <ProjectReference Include="..\Users.Presentation\Users.Presentation.csproj" />
+  </ItemGroup>
+
+</Project>

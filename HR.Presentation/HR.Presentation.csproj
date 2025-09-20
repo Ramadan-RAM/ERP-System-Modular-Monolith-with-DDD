@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Modules\HR\HR.Application\HR.Application.csproj" />
+    <ProjectReference Include="..\Modules\HR\HR.Domain\HR.Domain.csproj" />
+    <ProjectReference Include="..\Modules\HR\HR.Infrastructure\HR.Infrastructure.csproj" />
+    <ProjectReference Include="..\SharedKernel\ERPSys.SharedKernel\ERPSys.SharedKernel.csproj" />
+  </ItemGroup>
+
+</Project>
