@@ -23,10 +23,13 @@ erp-frontend/
 - Login page (authentication).  
 - Profile page (photo, personal info, security questions).  
 - Employees CRUD (HR module).  
+- etc
+  ![Alt Text](./images/login.png)
+  ![Alt Text](./images/profile.png)
+  ![Alt Text](./images/changepassword.png)
+  ![Alt Text](./images/securirtyQuestion.png)
+  ![Alt Text](./images/Employeeform.png)
+  ![Alt Text](./images/confirmation.png)
+  ![Alt Text](./images/don.png)
 
-## Screenshots
-Add screenshots here:  
-- Login Page  
-- Profile Page  
-- Employees CRUD  
 
