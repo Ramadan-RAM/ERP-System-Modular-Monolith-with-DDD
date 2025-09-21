@@ -22,8 +22,8 @@ erp-frontend/
 ## Features
 - Login page (authentication).  
 - Profile page (photo, personal info, security questions).  
-- Employees CRUD (HR module).  
-- etc
+- Employees CRUD (HR module).
+- 
   ![Alt Text](./images/login.png)
   ![Alt Text](./images/profile.png)
   ![Alt Text](./images/changepassword.png)
