@@ -43,10 +43,10 @@ Frontend is built using **Angular 19 + AdminLTE**.
 | Logging     | Completed       | Error/Event Tracking                       |
 | CRM         | Planned         | Placeholder for future extension           |
 
-## Tech Stack
-
-- Backend: .NET Core 8, Entity Framework Core, MediatR  
-- Messaging: RabbitMQ / MassTransit  
-- Mapping: AutoMapper, Mapster  
-- Frontend: Angular CLI 19 (standalone APIs)  
-
+##📊 Tech Stack
+- Backend: .NET Core 8, Entity Framework Core, APIs , RabbitMQ
+- Databases: SQL Server (HR_DB, Finance_DB, Security_DB, Logging_DB)
+- Messaging: RabbitMQ, InMemory, Hybrid + Outbox Pattern
+- Mapping: AutoMapper (HR), Mapster (Finance)
+- Frontend: Angular CLI 19 (standalone APIs), AdminLTE Theme
+- Authentication: JWT + Roles
