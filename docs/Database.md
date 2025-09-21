@@ -3,14 +3,19 @@
 The system uses separate databases per bounded context.
 
 ## HR
-- Employees  
-- Departments  
-- Attendance  
+- Employees
+- Branches
+- Departments
+- JobTitles 
+- Attendance
+- FingerprintDevices
 - Leave  
-- Payslips  
+- Payslips
+- OutboxMessages  
 
 ## Finance
-- GLAccounts  
+- GLAccounts
+- DepartmentCostLink
 - JournalEntries  
 - JournalLines  
 - Currencies  
@@ -23,8 +28,18 @@ The system uses separate databases per bounded context.
 - CostCenters  
 
 ## Users
-- UserAccounts  
-- SecurityQuestions  
+- Permissions
+- RefreshTokens
+- RolePermissions
+- Roles  
+- SecurityQuestions
+- UserSecurityAnswers
+- StoreBranches
+- UserPermissions
+- UserProfiles
+- UserRoles
+- Users
+- 
 
 ## Logging
 - ProcessedEventLogs  
@@ -51,4 +66,6 @@ erDiagram
     UserAccount ||--o{ SecurityQuestion : secures
 
     Logging ||--o{ ProcessedEventLog : logs
-\\\
+\\\
+
+
