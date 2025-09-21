@@ -24,33 +24,6 @@ Frontend is built using **Angular 19 + AdminLTE**.
 
 ---
 
-## 📂 Project Structure
-
-```plaintext
-ERPSys_DDD_ModularMonolith.Solution/
-├── HR/
-│   ├── HR.Application/
-│   ├── HR.Domain/
-│   ├── HR.Infrastructure/
-│   └── HR.Presentation/
-├── Finance/
-│   ├── Finance.Application/
-│   ├── Finance.Domain/
-│   ├── Finance.Infrastructure/
-│   └── Finance.Presentation/
-├── Users/
-│   ├── Users.Application/
-│   ├── Users.Domain/
-│   ├── Users.Infrastructure/
-│   └── Users.Presentation/
-├── Logging/
-│   ├── Logging.Application/
-│   ├── Logging.Domain/
-│   └── Logging.Infrastructure/
-├── CRM/ (planned)
-├── ERP.API/ (composition root)
-├── SharedKernel/ (Domain abstractions, messaging, persistence, events, etc.)
-
 ## Documentation
 
 - [Architecture Overview](docs/Architecture.md)  
