@@ -1,4 +1,4 @@
-# 🏢 ERPSys_DDD_ModularMonolith
+# 🏢 ERP System - Modular Monolith with DDD
 
 A **Modular Monolith ERP System** built with **Domain-Driven Design (DDD)** principles.  
 Supports **HR, Finance, User Management, and Logging** with cross-module integration.  
@@ -43,7 +43,7 @@ Frontend is built using **Angular 19 + AdminLTE**.
 | Logging     | Completed       | Error/Event Tracking                       |
 | CRM         | Planned         | Placeholder for future extension           |
 
-##📊 Tech Stack
+## 📊 Tech Stack
 - Backend: .NET Core 8, Entity Framework Core, APIs , RabbitMQ
 - Databases: SQL Server (HR_DB, Finance_DB, Security_DB, Logging_DB)
 - Messaging: RabbitMQ, InMemory, Hybrid + Outbox Pattern
