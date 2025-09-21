@@ -1,30 +1,87 @@
 # Architecture Overview
 
-The project follows a **Modular Monolith** approach with **Domain-Driven Design (DDD)**.
+The project follows a **Modular Monolith** architecture, designed with **Domain-Driven Design (DDD)** principles.
+While currently implemented as a modular monolith, the structure is prepared for **future decomposition into Microservices**.
+
+---
 
 ## Bounded Contexts
-- HR Module: Employees, attendance, leave, payroll.  
-- Finance Module: General Ledger, journal entries, purchases, cost centers.  
-- Users Module: Authentication, profile, security questions.  
-- Logging Module: Error and event tracking.  
-- CRM Module: Placeholder for future extension.  
+
+- **HR Module**: Employee management, attendance, leave, payroll, payslip generation.
+- **Finance Module**: General Ledger, journal entries, purchases, cost centers, profit/loss forecasting.
+- **Users Module**: Authentication, profile, security questions, and role-based access.
+- **Logging Module**: Error and event tracking for IT support and auditing.
+- **CRM Module**: Reserved as a placeholder for future business expansion.
+
+---
 
 ## Integrations
-- HR ↔ Finance integration via RabbitMQ.  
-- Adding a new employee in HR creates a Finance account.  
-- Updating salary or profile in HR updates Finance.  
-- Supports Hybrid Mode: in-memory + message broker.  
+
+- **HR ↔ Finance via RabbitMQ**
+  - Creating a new employee in HR automatically creates a Finance account.
+  - Updating employee salary or profile in HR reflects in Finance.
+
+- **Hybrid Mode Support**
+  - In-memory messaging for local performance.
+  - RabbitMQ for distributed scenarios.
+  - Outbox Pattern ensures reliability and avoids message loss.
+
+---
 
 ## Databases
-- Each module has its own schema (Bounded Context).  
-- Logging uses a separate database for IT support and auditing.  
-- EF Core migrations and seed data are included.  
+
+- Each module has its **own database schema** (Bounded Context).
+- Logging has a **dedicated database** for tracking and auditing.
+- Implemented using **EF Core Migrations + Seed Data**.
+
+**Schemas:**
+- `HR\\\_DB`
+- `Finance\\\_DB`
+- `Users\\\_DB`
+- `Logging\\\_DB`
+
+---
 
 ## Tech Stack
-- .NET Core 8  
-- Entity Framework Core  
-- MediatR  
-- RabbitMQ / MassTransit  
-- AutoMapper / Mapster  
-- Angular CLI 19  
 
+- **Backend**: .NET Core 8, Entity Framework Core, MediatR
+- **Messaging**: RabbitMQ, MassTransit, InMemory transport
+- **Mapping**: AutoMapper (HR), Mapster (Finance)
+- **Frontend**: Angular CLI 19 (Standalone APIs) + AdminLTE Template
+- **Authentication**: JWT + Roles
+
+---
+
+## Diagrams
+
+### High-Level Architecture
+```mermaid
+flowchart TD
+    subgraph HR [HR Module]
+        HRA[HR.API] --> HRAppl[HR.Application]
+        HRAppl --> HRD[HR.Domain]
+        HRD --> HRI[HR.Infrastructure]
+    end
+
+    subgraph Finance [Finance Module]
+        FA[Finance.API] --> FAppl[Finance.Application]
+        FAppl --> FD[Finance.Domain]
+        FD --> FI[Finance.Infrastructure]
+    end
+
+    subgraph Users [Users Module]
+        UA[Users.API] --> UAppl[Users.Application]
+        UAppl --> UD[Users.Domain]
+        UD --> UI[Users.Infrastructure]
+    end
+
+    subgraph Logging [Logging Module]
+        LAppl[Logging.Application] --> LD[Logging.Domain]
+        LD --> LI[Logging.Infrastructure]
+    end
+
+    HR -- EmployeeCreated --> Finance
+    HR -- PayrollPosted --> Finance
+    Users --> HR
+    Users --> Finance
+    Logging --> All
