@@ -1,7 +1,55 @@
-# ERP System - Modular Monolith with DDD
+# 🏢 ERPSys_DDD_ModularMonolith
 
-This repository contains a self-study ERP system built using **.NET Core 8** and **Angular CLI 19**.  
-The architecture follows **Modular Monolith** principles with **Domain-Driven Design (DDD)**.  
+A **Modular Monolith ERP System** built with **Domain-Driven Design (DDD)** principles.  
+Supports **HR, Finance, User Management, and Logging** with cross-module integration.  
+Frontend is built using **Angular 19 + AdminLTE**.
+
+---
+
+## 🌟 Highlights
+
+- 🧩 **Architecture**: Modular Monolith + DDD Layers (Domain, Application, Infrastructure, Presentation).  
+- 📦 **Messaging**: RabbitMQ, InMemory, or Hybrid transport (with **Outbox Pattern** for reliability).  
+- 🔐 **Security**: JWT Authentication + Role-based Authorization.  
+- 🧑‍💼 **HR Module**: Employee CRUD, Payroll, Leave Management.  
+- 💰 **Finance Module**: GL Accounts, Journal Entries, Payroll Posting, Reports.  
+- 👥 **User Management**: Security, Roles, and Permissions.  
+- 📊 **Logging/Tracking**: Issue tracking & system monitoring module for IT/Production.  
+- 🎨 **Frontend (Angular + AdminLTE)**:  
+  - Login & Role-based auth  
+  - Employee CRUD (MVP)  
+- 🔀 **Mapping**:  
+  - HR → `AutoMapper`  
+  - Finance → `Mapster` (chosen for lightweight, high-performance mapping).
+
+---
+
+## 📂 Project Structure
+
+```plaintext
+ERPSys_DDD_ModularMonolith.Solution/
+├── HR/
+│   ├── HR.Application/
+│   ├── HR.Domain/
+│   ├── HR.Infrastructure/
+│   └── HR.Presentation/
+├── Finance/
+│   ├── Finance.Application/
+│   ├── Finance.Domain/
+│   ├── Finance.Infrastructure/
+│   └── Finance.Presentation/
+├── Users/
+│   ├── Users.Application/
+│   ├── Users.Domain/
+│   ├── Users.Infrastructure/
+│   └── Users.Presentation/
+├── Logging/
+│   ├── Logging.Application/
+│   ├── Logging.Domain/
+│   └── Logging.Infrastructure/
+├── CRM/ (planned)
+├── ERP.API/ (composition root)
+├── SharedKernel/ (Domain abstractions, messaging, persistence, events, etc.)
 
 ## Documentation
 
