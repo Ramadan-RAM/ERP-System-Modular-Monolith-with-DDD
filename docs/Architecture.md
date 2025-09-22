@@ -81,19 +81,22 @@ flowchart TD
     end
 
     subgraph Logging [Logging Module]
-        LAppl[Logging.Application] --> LD[Logging.Domain]
+        LA[Logging.API] --> LAppl[Logging.Application]
+        LAppl --> LD[Logging.Domain]
         LD --> LI[Logging.Infrastructure]
     end
 
     %% Integrations
-    HR -- EmployeeCreated --> Finance
-    HR -- PayrollPosted --> Finance
-    Users --> HR
-    Users --> Finance
-    Logging --> All
+    HRA -- EmployeeCreated --> FA
+    HRA -- PayrollPosted --> FA
+    UA --> HRA
+    UA --> FA
+    LA --> HRA
+    LA --> FA
+    LA --> UA
 
     %% Shared Dependencies
-    SK --> HR
-    SK --> Finance
-    SK --> Users
-    SK --> Logging
+    SK --> HRAppl
+    SK --> FAppl
+    SK --> UAppl
+    SK --> LAppl
