@@ -85,3 +85,9 @@ flowchart TD
     Users --> HR
     Users --> Finance
     Logging --> All
+
+%% Shared Dependencies
+    SK --> HR
+    SK --> Finance
+    SK --> Users
+    SK --> Logging
